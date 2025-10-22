@@ -2,6 +2,11 @@
 // Intersection Observer animations, smooth interactions
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Hero entrance animation
+    setTimeout(() => {
+        document.querySelector('.hero').classList.add('hero-loaded');
+    }, 100);
+
     // Smooth scroll behavior
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {

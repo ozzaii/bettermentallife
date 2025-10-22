@@ -113,27 +113,148 @@ section {
     position: relative;
 }
 
-/* Hero */
+/* Hero - Asymmetric Editorial Power */
 .hero {
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
     background: #FAF7F2;
+    position: relative;
+    padding: 80px 24px;
+    overflow: hidden;
+}
+
+.hero-container {
+    max-width: 1000px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-container > * {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.hero-loaded .hero-container > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-loaded .hero-container .label {
+    transition-delay: 0.1s;
+}
+
+.hero-loaded .hero-container h1 {
+    transition-delay: 0.3s;
+}
+
+.hero-loaded .hero-container .hero-statement {
+    transition-delay: 0.5s;
+}
+
+.hero-loaded .hero-container .hero-meta {
+    transition-delay: 0.7s;
+}
+
+.hero-loaded .hero-container .hero-cta {
+    transition-delay: 0.9s;
+}
+
+.hero-decorative {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(120px, 20vw, 240px);
+    font-weight: 700;
+    color: rgba(139, 38, 53, 0.06);
+    position: absolute;
+    top: -40px;
+    right: -20px;
+    line-height: 1;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1.2s ease 0.2s;
+}
+
+.hero-loaded .hero-decorative {
+    opacity: 1;
+}
+
+.hero .label {
+    position: relative;
+    z-index: 3;
 }
 
 .hero h1 {
     color: #1A1814;
-    max-width: 800px;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 3;
 }
 
-.credentials {
+.hero-statement {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(22px, 3.5vw, 32px);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4A4743;
+    max-width: 700px;
+    margin-bottom: 32px;
+}
+
+.hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
     font-size: 18px;
-    color: #6B6862;
+    font-weight: 600;
+    color: #8B2635;
+    margin-bottom: 48px;
+    letter-spacing: 0.05em;
 }
 
-.credentials p {
-    margin-bottom: 8px;
+.meta-divider {
+    color: rgba(139, 38, 53, 0.4);
+}
+
+.hero-cta {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 600;
+    color: #FAF7F2;
+    background: #8B2635;
+    padding: 16px 40px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid #8B2635;
+}
+
+.hero-cta:hover {
+    background: #1A1814;
+    border-color: #1A1814;
+    transform: translateX(4px);
+}
+
+.hero-line {
+    position: absolute;
+    left: 0;
+    top: 10%;
+    width: 4px;
+    height: 0;
+    background: linear-gradient(to bottom,
+        transparent 0%,
+        #8B2635 20%,
+        #8B2635 80%,
+        transparent 100%);
+    z-index: 1;
+    transition: height 1.5s ease 0.3s;
+}
+
+.hero-loaded .hero-line {
+    height: 80%;
 }
 
 /* Academic Timeline */
@@ -533,6 +654,29 @@ section {
         padding: 120px 48px;
     }
 
+    .hero {
+        padding: 120px 48px;
+    }
+
+    .hero-container {
+        margin-left: 80px;
+    }
+
+    .hero-decorative {
+        font-size: 280px;
+        top: -60px;
+        right: -40px;
+    }
+
+    .hero-statement {
+        font-size: 32px;
+    }
+
+    .hero-line {
+        width: 6px;
+        left: 24px;
+    }
+
     .section-number {
         margin-bottom: -32px;
     }
@@ -566,6 +710,31 @@ section {
 @media (min-width: 1024px) {
     section {
         padding: 140px 64px;
+    }
+
+    .hero {
+        padding: 140px 64px;
+    }
+
+    .hero-container {
+        margin-left: 120px;
+        max-width: 1100px;
+    }
+
+    .hero-decorative {
+        font-size: 360px;
+        top: -80px;
+        right: -60px;
+    }
+
+    .hero-statement {
+        font-size: 36px;
+        max-width: 800px;
+    }
+
+    .hero-line {
+        width: 8px;
+        left: 48px;
     }
 
     .research-highlight {
