@@ -773,35 +773,33 @@ section {
     transition: all 0.4s ease;
 }
 
-/* Bottom-left corner - L-shaped fade */
+/* Bottom-left corner - minimal L bracket */
 .map-container::before {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50px;
-    height: 50px;
-    border-left: 3px solid;
-    border-bottom: 3px solid;
-    border-image: linear-gradient(to top right, #8B2635 0%, rgba(139, 38, 53, 0) 100%) 1;
-    opacity: 0.7;
+    bottom: -2px;
+    left: -2px;
+    width: 40px;
+    height: 40px;
+    border-left: 2px solid rgba(139, 38, 53, 0.5);
+    border-bottom: 2px solid rgba(139, 38, 53, 0.5);
+    opacity: 0.8;
     transition: opacity 0.4s ease;
     pointer-events: none;
     z-index: 1;
 }
 
-/* Top-right corner - L-shaped fade */
+/* Top-right corner - minimal L bracket */
 .map-container::after {
     content: '';
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 50px;
-    height: 50px;
-    border-top: 3px solid;
-    border-right: 3px solid;
-    border-image: linear-gradient(to bottom left, #8B2635 0%, rgba(139, 38, 53, 0) 100%) 1;
-    opacity: 0.7;
+    top: -2px;
+    right: -2px;
+    width: 40px;
+    height: 40px;
+    border-top: 2px solid rgba(139, 38, 53, 0.5);
+    border-right: 2px solid rgba(139, 38, 53, 0.5);
+    opacity: 0.8;
     transition: opacity 0.4s ease;
     pointer-events: none;
     z-index: 1;
@@ -809,7 +807,8 @@ section {
 
 .map-container:hover::before,
 .map-container:hover::after {
-    opacity: 0.95;
+    opacity: 1;
+    border-color: rgba(139, 38, 53, 0.7);
 }
 
 .map-container iframe {
