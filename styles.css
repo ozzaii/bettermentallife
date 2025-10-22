@@ -509,10 +509,10 @@ section {
 
 .expertise-header {
     display: grid;
-    grid-template-columns: 24px 1fr;
+    grid-template-columns: 20px 1fr;
     align-items: center;
-    gap: 16px;
-    padding: 20px 24px;
+    gap: 12px;
+    padding: 20px 0;
     cursor: pointer;
     transition: none;
     -webkit-tap-highlight-color: transparent;
@@ -556,12 +556,13 @@ section {
 }
 
 .expertise-title {
-    font-size: 18px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 20px;
     font-weight: 500;
-    color: #1A1814;
-    letter-spacing: -0.01em;
+    color: #2A2622;
+    letter-spacing: -0.015em;
     margin: 0;
-    transition: color 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .expertise-item:hover .expertise-title {
@@ -572,7 +573,7 @@ section {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    padding: 0 24px 0 48px;
+    padding: 0 0 0 32px;
     transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
                 opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
                 padding 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -581,7 +582,7 @@ section {
 .expertise-item.active .expertise-content {
     max-height: 300px;
     opacity: 1;
-    padding: 4px 24px 24px 48px;
+    padding: 4px 0 24px 32px;
 }
 
 .expertise-content p {
@@ -623,21 +624,27 @@ section {
 .services li {
     padding-left: 32px;
     position: relative;
-    font-size: 19px;
-    line-height: 1.6;
-    transition: color 0.3s ease;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.7;
+    color: #2A2622;
+    letter-spacing: -0.01em;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .services li:hover {
     color: #8B2635;
+    transform: translateX(4px);
 }
 
 .services li::before {
-    content: "•";
+    content: "—";
     position: absolute;
     left: 0;
     color: #8B2635;
-    font-size: 28px;
+    font-size: 20px;
+    font-weight: 300;
     line-height: 1;
 }
 
