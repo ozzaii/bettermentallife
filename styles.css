@@ -890,11 +890,6 @@ section {
     user-select: none;
 }
 
-.collapsible-location:hover {
-    border-left-width: 5px;
-    padding-left: 26px;
-}
-
 .collapsible-location:hover .location-name {
     color: #8B2635;
 }
@@ -904,7 +899,30 @@ section {
 }
 
 .location-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
     padding-bottom: 4px;
+}
+
+.location-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.location-plus {
+    color: #8B2635;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1;
+    margin-top: 4px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.collapsible-location.active .location-plus {
+    transform: rotate(90deg);
 }
 
 .location-name {
