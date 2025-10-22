@@ -8,6 +8,12 @@
     box-sizing: border-box;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background: #FAF7F2;
@@ -477,36 +483,35 @@ section {
 
 .expertise-list {
     display: grid;
-    gap: 2px;
-    background: rgba(139, 38, 53, 0.08);
-    border-radius: 2px;
+    gap: 1px;
+    background: rgba(139, 38, 53, 0.06);
     overflow: hidden;
 }
 
 .expertise-item {
     background: #FFFFFF;
-    transition: all 0.3s ease;
 }
 
 .expertise-header {
     display: grid;
-    grid-template-columns: 24px 1fr 24px;
+    grid-template-columns: 32px 1fr;
     align-items: center;
-    gap: 16px;
-    padding: 20px 24px;
+    gap: 20px;
+    padding: 22px 32px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: padding 0.3s ease;
 }
 
-.expertise-header:hover {
-    background: rgba(139, 38, 53, 0.02);
+.expertise-header:hover .expertise-dash {
+    transform: translateX(4px);
 }
 
 .expertise-dash {
     color: #8B2635;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 300;
     line-height: 1;
+    transition: transform 0.3s ease;
 }
 
 .expertise-title {
@@ -522,36 +527,28 @@ section {
     color: #8B2635;
 }
 
-.expertise-icon {
-    font-size: 20px;
-    color: #8B2635;
-    font-weight: 300;
-    line-height: 1;
-    text-align: right;
-    transition: transform 0.3s ease;
-}
-
-.expertise-item.active .expertise-icon {
-    transform: rotate(45deg);
-}
-
 .expertise-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.4s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.4s ease 0.1s,
+                transform 0.4s ease 0.1s;
 }
 
 .expertise-item.active .expertise-content {
-    max-height: 200px;
-    padding: 0 24px 24px 64px;
+    max-height: 300px;
+    opacity: 1;
+    transform: translateY(0);
+    padding: 0 32px 28px 84px;
 }
 
 .expertise-content p {
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 1.8;
     color: #6B6862;
     margin: 0;
-    font-style: italic;
 }
 
 /* Services */
