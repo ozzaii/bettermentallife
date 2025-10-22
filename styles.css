@@ -553,11 +553,11 @@ section {
 }
 
 .expertise-title {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 20px;
-    font-weight: 500;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
     color: #2A2622;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.008em;
     margin: 0;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -621,12 +621,12 @@ section {
 .services li {
     padding-left: 32px;
     position: relative;
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 20px;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 18px;
     font-weight: 500;
-    line-height: 1.7;
+    line-height: 1.75;
     color: #2A2622;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.005em;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
