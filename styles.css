@@ -189,25 +189,22 @@ p {
     margin-bottom: 24px;
 }
 
-/* Section Numbers - Editorial Magazine Style */
+/* Section Numbers */
 .section-number {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(64px, 8vw, 96px);
-    font-weight: 300;
+    font-size: clamp(72px, 10vw, 120px);
+    font-weight: 400;
     line-height: 1;
-    color: rgba(139, 38, 53, 0.08);
-    position: absolute;
-    top: 48px;
-    right: 24px;
-    letter-spacing: -0.06em;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform, opacity;
-    pointer-events: none;
+    color: rgba(139, 38, 53, 0.12);
+    display: block;
+    margin-bottom: -20px;
+    letter-spacing: -0.04em;
+    transition: all 0.3s ease;
+    will-change: transform;
 }
 
 section:hover .section-number {
-    color: rgba(139, 38, 53, 0.14);
-    transform: scale(1.03);
+    color: rgba(139, 38, 53, 0.18);
 }
 
 /* Sections */
