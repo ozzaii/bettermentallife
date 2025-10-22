@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tr: {
             // Hero
             heroLabel: "Uzm. Klinik Psikolog",
-            heroStatement: "Akademik araştırma ve klinik uzmanlık. İngiltere NHS eğitimi. İstanbul merkezli psikoterapi hizmeti.",
+            heroStatement: "Londra eğitimli, araştırmacı klinik psikolog. Kanıta dayalı, insana odaklı terapi.",
             heroCTA: "Randevu Al →",
             heroCTALink: "https://wa.me/905339735991?text=Merhaba%2C%20psikolojik%20destek%20hizmeti%20hakk%C4%B1nda%20bilgi%20almak%20ve%20randevu%20olu%C5%9Fturmak%20istiyorum.",
 
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
         en: {
             // Hero
             heroLabel: "Clinical Psychologist",
-            heroStatement: "Academic research and clinical expertise. UK NHS training. Istanbul-based psychotherapy services.",
+            heroStatement: "London-trained research clinical psychologist. Evidence-based, person-centered therapy.",
             heroCTA: "Book Appointment →",
             heroCTALink: "https://wa.me/905339735991?text=Hello%2C%20I%20would%20like%20to%20get%20information%20about%20psychological%20support%20services%20and%20make%20an%20appointment.",
 
