@@ -636,12 +636,12 @@ section {
 }
 
 .services li::before {
-    content: "—";
+    content: "•";
     position: absolute;
     left: 0;
     color: #8B2635;
-    font-size: 20px;
-    font-weight: 300;
+    font-size: 24px;
+    font-weight: 400;
     line-height: 1;
 }
 
