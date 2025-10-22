@@ -31,37 +31,50 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Skip link for accessibility -->
+    <!-- Skip link -->
     <a href="#main" class="skip-link">Skip to main content</a>
 
     <main id="main" role="main">
 
-        <!-- HERO SECTION - DARK -->
+        <!-- ============================================
+             HERO SECTION - REBUILT WITH CORRECT HIERARCHY
+             ============================================ -->
         <section class="hero fade-in-section">
+            <!-- Decorative line -->
             <div class="hero-line" aria-hidden="true"></div>
-            <p class="section-label">BETTER MENTAL LIFE</p>
 
-            <h1 class="hero-title">
-                Uzm. Klinik Psikolog<br>
-                Şilan Eser
-            </h1>
+            <!-- Label -->
+            <p class="hero-label">BETTER MENTAL LIFE</p>
 
-            <p class="hero-subtitle">
+            <!-- Small intro -->
+            <p class="hero-intro">Uzm. Klinik Psikolog</p>
+
+            <!-- MASSIVE NAME (hero moment) -->
+            <h1 class="hero-name">Şilan Eser</h1>
+
+            <!-- Credentials -->
+            <p class="hero-credentials">
                 UK-Trained Clinical Psychologist<br>
                 Published Researcher | NHS Experience
             </p>
 
-            <a href="https://wa.me/905339735991" class="cta-button">
+            <!-- CTA (present but not dominant) -->
+            <a href="https://wa.me/905339735991" class="hero-cta">
                 WhatsApp'tan Randevu Alın
             </a>
 
-            <div class="hero-accent-line" aria-hidden="true"></div>
+            <!-- Vertical accent line -->
+            <div class="hero-accent-vertical" aria-hidden="true"></div>
         </section>
 
-        <!-- ACADEMIC SECTION - LIGHT -->
+        <!-- ============================================
+             ACADEMIC CREDENTIALS - WHITE
+             ============================================ -->
         <section class="academic fade-in-section">
             <p class="section-label">AKADEMİK MÜKEMMELİYET</p>
-            <div class="divider-horizontal" aria-hidden="true"></div>
+
+            <!-- Offset horizontal divider -->
+            <div class="section-divider-offset" aria-hidden="true"></div>
 
             <h2 class="section-title">
                 Uluslararası<br>
@@ -69,20 +82,23 @@
             </h2>
 
             <div class="credentials">
+                <!-- Block 1 -->
                 <div class="credential-block">
                     <h3 class="credential-title">University of London</h3>
                     <p class="credential-text">BSc & MSc in Clinical Psychology</p>
                     <p class="credential-detail">Goldsmiths College</p>
                 </div>
-                <div class="credential-divider" aria-hidden="true"></div>
+                <div class="credential-divider" data-width="80" aria-hidden="true"></div>
 
-                <div class="credential-block credential-offset">
+                <!-- Block 2 (offset) -->
+                <div class="credential-block credential-offset-sm">
                     <h3 class="credential-title">NHS Experience</h3>
                     <p class="credential-text">Clinical, Criminal & Health Psychology</p>
                     <p class="credential-detail">UK National Health Service</p>
                 </div>
-                <div class="credential-divider credential-divider-offset" aria-hidden="true"></div>
+                <div class="credential-divider credential-divider-right" data-width="70" aria-hidden="true"></div>
 
+                <!-- Block 3 -->
                 <div class="credential-block">
                     <h3 class="credential-title">Published Researcher</h3>
                     <p class="credential-text">Academic paper in ScienceDirect</p>
@@ -94,9 +110,10 @@
                         Makaleyi İnceleyin →
                     </a>
                 </div>
-                <div class="credential-divider credential-divider-center" aria-hidden="true"></div>
+                <div class="credential-divider credential-divider-center" data-width="60" aria-hidden="true"></div>
 
-                <div class="credential-block">
+                <!-- Block 4 (slight offset) -->
+                <div class="credential-block credential-offset-xs">
                     <h3 class="credential-title">PhD Candidate</h3>
                     <p class="credential-text">Clinical Psychology, Üsküdar University</p>
                     <p class="credential-detail">On-going doctoral research</p>
@@ -104,11 +121,14 @@
             </div>
         </section>
 
-        <!-- EXPERTISE SECTION - DARK -->
+        <!-- ============================================
+             EXPERTISE - DARK
+             ============================================ -->
         <section class="expertise fade-in-section">
-            <div class="expertise-accent-line" aria-hidden="true"></div>
+            <!-- Vertical accent line (left) -->
+            <div class="expertise-accent-vertical" aria-hidden="true"></div>
 
-            <p class="section-label">UZMANLIK ALANLARI</p>
+            <p class="section-label expertise-label-offset">UZMANLIK ALANLARI</p>
 
             <h2 class="section-title">
                 Bilişsel Davranışçı<br>
@@ -126,7 +146,9 @@
             </ul>
         </section>
 
-        <!-- SERVICES SECTION - SUBTLE GRAY -->
+        <!-- ============================================
+             SERVICES - SUBTLE GRAY
+             ============================================ -->
         <section class="services fade-in-section">
             <p class="section-label">VERDİĞİ HİZMETLER</p>
 
@@ -136,17 +158,24 @@
             </h2>
 
             <ul class="services-list">
-                <li>Bilişsel Davranışçı Terapi (BDT)</li>
-                <li>Bireysel Psikoterapi</li>
-                <li>Çift ve Aile Terapisi</li>
-                <li>Danışmanlık Hizmetleri</li>
-                <li>Geriatrik Psikoloji</li>
+                <li><span class="service-arrow">→</span> Bilişsel Davranışçı Terapi (BDT)</li>
+                <li><span class="service-arrow">→</span> Bireysel Psikoterapi</li>
+                <li><span class="service-arrow">→</span> Çift ve Aile Terapisi</li>
+                <li><span class="service-arrow">→</span> Danışmanlık Hizmetleri</li>
+                <li><span class="service-arrow">→</span> Geriatrik Psikoloji</li>
             </ul>
         </section>
 
-        <!-- LOCATIONS SECTION - WHITE, CENTERED -->
+        <!-- ============================================
+             LOCATIONS - WHITE, CENTERED
+             ============================================ -->
         <section class="locations fade-in-section">
-            <div class="locations-geometric-lines" aria-hidden="true"></div>
+            <!-- Geometric diagonal lines -->
+            <div class="locations-geometric" aria-hidden="true">
+                <div class="geo-line geo-line-1"></div>
+                <div class="geo-line geo-line-2"></div>
+                <div class="geo-line geo-line-3"></div>
+            </div>
 
             <p class="section-label">LOKASYONLARIMIZ</p>
 
@@ -157,7 +186,9 @@
 
             <div class="locations-grid">
                 <div class="location-item">Nişantaşı</div>
+                <div class="location-separator">•</div>
                 <div class="location-item">Bahçeşehir</div>
+                <div class="location-separator">•</div>
                 <div class="location-item">Moda</div>
             </div>
 
@@ -168,9 +199,19 @@
             </div>
         </section>
 
-        <!-- FINAL CTA SECTION - DARK, DRAMATIC -->
+        <!-- ============================================
+             FINAL CTA - DARK, MAXIMUM DRAMA
+             ============================================ -->
         <section class="cta-final fade-in-section">
-            <div class="cta-geometric-pattern" aria-hidden="true"></div>
+            <!-- Abstract broken grid pattern -->
+            <div class="cta-geometric-pattern" aria-hidden="true">
+                <div class="grid-line grid-line-1"></div>
+                <div class="grid-line grid-line-2"></div>
+                <div class="grid-line grid-line-3"></div>
+                <div class="grid-line grid-line-4"></div>
+                <div class="grid-line grid-line-5"></div>
+                <div class="grid-line grid-line-6"></div>
+            </div>
 
             <h2 class="cta-title">
                 Zihinsel Sağlığınız İçin<br>
@@ -182,7 +223,7 @@
                 bugün randevu oluşturun.
             </p>
 
-            <a href="https://wa.me/905339735991" class="cta-button cta-button-inverted">
+            <a href="https://wa.me/905339735991" class="cta-button-inverted">
                 WhatsApp'tan İletişime Geçin
             </a>
 
