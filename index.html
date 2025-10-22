@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=15">
+    <link rel="stylesheet" href="styles.css?v=16">
 </head>
 <body>
 
@@ -110,15 +110,84 @@
         <section class="expertise">
             <span class="section-number">03</span>
             <h2>Klinik Uzmanlık Alanları</h2>
-            <ul>
-                <li>Anksiyete Bozuklukları (Anxiety Disorders)</li>
-                <li>Obsesif Kompulsif Bozukluk (OCD)</li>
-                <li>Depresyon (Depression)</li>
-                <li>Yeme Bozuklukları (Eating Disorders)</li>
-                <li>Bağımlılık (Addiction)</li>
-                <li>Yalnızlık ve Sosyal İzolasyon</li>
-                <li>Geriatrik Psikoloji (Geriatric Psychology)</li>
-            </ul>
+            <div class="expertise-list">
+                <div class="expertise-item" data-expertise="anxiety">
+                    <div class="expertise-header">
+                        <span class="expertise-dash">—</span>
+                        <h3 class="expertise-title" data-i18n="expertiseAnxietyTitle">Anksiyete Bozuklukları</h3>
+                        <span class="expertise-icon">+</span>
+                    </div>
+                    <div class="expertise-content">
+                        <p data-i18n="expertiseAnxietyDesc">Panik atak, sosyal anksiyete, yaygın anksiyete bozukluğu ve fobiler için kanıta dayalı terapi yaklaşımları.</p>
+                    </div>
+                </div>
+
+                <div class="expertise-item" data-expertise="ocd">
+                    <div class="expertise-header">
+                        <span class="expertise-dash">—</span>
+                        <h3 class="expertise-title" data-i18n="expertiseOCDTitle">Obsesif Kompulsif Bozukluk (OCD)</h3>
+                        <span class="expertise-icon">+</span>
+                    </div>
+                    <div class="expertise-content">
+                        <p data-i18n="expertiseOCDDesc">Takıntılı düşünceler ve tekrarlayan davranışların yönetimi için uzmanlaşmış BDT protokolleri.</p>
+                    </div>
+                </div>
+
+                <div class="expertise-item" data-expertise="depression">
+                    <div class="expertise-header">
+                        <span class="expertise-dash">—</span>
+                        <h3 class="expertise-title" data-i18n="expertiseDepressionTitle">Depresyon</h3>
+                        <span class="expertise-icon">+</span>
+                    </div>
+                    <div class="expertise-content">
+                        <p data-i18n="expertiseDepressionDesc">Majör depresyon, distimi ve mevsimsel duygudurum bozuklukları için bütünleşik terapi desteği.</p>
+                    </div>
+                </div>
+
+                <div class="expertise-item" data-expertise="eating">
+                    <div class="expertise-header">
+                        <span class="expertise-dash">—</span>
+                        <h3 class="expertise-title" data-i18n="expertiseEatingTitle">Yeme Bozuklukları</h3>
+                        <span class="expertise-icon">+</span>
+                    </div>
+                    <div class="expertise-content">
+                        <p data-i18n="expertiseEatingDesc">Anoreksiya, bulimia ve tıkınırcasına yeme bozukluğu için multidisipliner tedavi yaklaşımı.</p>
+                    </div>
+                </div>
+
+                <div class="expertise-item" data-expertise="addiction">
+                    <div class="expertise-header">
+                        <span class="expertise-dash">—</span>
+                        <h3 class="expertise-title" data-i18n="expertiseAddictionTitle">Bağımlılık</h3>
+                        <span class="expertise-icon">+</span>
+                    </div>
+                    <div class="expertise-content">
+                        <p data-i18n="expertiseAddictionDesc">Madde bağımlılığı ve davranışsal bağımlılıklar için motivasyonel görüşme ve relaps önleme stratejileri.</p>
+                    </div>
+                </div>
+
+                <div class="expertise-item" data-expertise="loneliness">
+                    <div class="expertise-header">
+                        <span class="expertise-dash">—</span>
+                        <h3 class="expertise-title" data-i18n="expertiseLonelinessTitle">Yalnızlık ve Sosyal İzolasyon</h3>
+                        <span class="expertise-icon">+</span>
+                    </div>
+                    <div class="expertise-content">
+                        <p data-i18n="expertiseLonelinessDesc">Kronik yalnızlık ve sosyal bağlantı zorluğu yaşayanlar için ilişkisel ve bilişsel müdahaleler.</p>
+                    </div>
+                </div>
+
+                <div class="expertise-item" data-expertise="geriatric">
+                    <div class="expertise-header">
+                        <span class="expertise-dash">—</span>
+                        <h3 class="expertise-title" data-i18n="expertiseGeriatricTitle">Geriatrik Psikoloji</h3>
+                        <span class="expertise-icon">+</span>
+                    </div>
+                    <div class="expertise-content">
+                        <p data-i18n="expertiseGeriatricDesc">Yaşlı bireylerin psikolojik ihtiyaçları, bilişsel değişim ve yaşam kalitesi için özelleştirilmiş destek.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Services -->
@@ -215,6 +284,6 @@
         </footer>
     </main>
 
-    <script src="script.js?v=9"></script>
+    <script src="script.js?v=10"></script>
 </body>
 </html>

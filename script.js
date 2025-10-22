@@ -48,15 +48,20 @@ document.addEventListener('DOMContentLoaded', () => {
             expLocation2: "İstanbul",
 
             sectionExpertise: "Klinik Uzmanlık Alanları",
-            expertise: [
-                "Anksiyete Bozuklukları",
-                "Obsesif Kompulsif Bozukluk (OCD)",
-                "Depresyon",
-                "Yeme Bozuklukları",
-                "Bağımlılık",
-                "Yalnızlık ve Sosyal İzolasyon",
-                "Geriatrik Psikoloji"
-            ],
+            expertiseAnxietyTitle: "Anksiyete Bozuklukları",
+            expertiseAnxietyDesc: "Panik atak, sosyal anksiyete, yaygın anksiyete bozukluğu ve fobiler için kanıta dayalı terapi yaklaşımları.",
+            expertiseOCDTitle: "Obsesif Kompulsif Bozukluk (OCD)",
+            expertiseOCDDesc: "Takıntılı düşünceler ve tekrarlayan davranışların yönetimi için uzmanlaşmış BDT protokolleri.",
+            expertiseDepressionTitle: "Depresyon",
+            expertiseDepressionDesc: "Majör depresyon, distimi ve mevsimsel duygudurum bozuklukları için bütünleşik terapi desteği.",
+            expertiseEatingTitle: "Yeme Bozuklukları",
+            expertiseEatingDesc: "Anoreksiya, bulimia ve tıkınırcasına yeme bozukluğu için multidisipliner tedavi yaklaşımı.",
+            expertiseAddictionTitle: "Bağımlılık",
+            expertiseAddictionDesc: "Madde bağımlılığı ve davranışsal bağımlılıklar için motivasyonel görüşme ve relaps önleme stratejileri.",
+            expertiseLonelinessTitle: "Yalnızlık ve Sosyal İzolasyon",
+            expertiseLonelinessDesc: "Kronik yalnızlık ve sosyal bağlantı zorluğu yaşayanlar için ilişkisel ve bilişsel müdahaleler.",
+            expertiseGeriatricTitle: "Geriatrik Psikoloji",
+            expertiseGeriatricDesc: "Yaşlı bireylerin psikolojik ihtiyaçları, bilişsel değişim ve yaşam kalitesi için özelleştirilmiş destek.",
 
             sectionServices: "Sunulan Hizmetler",
             services: [
@@ -112,15 +117,20 @@ document.addEventListener('DOMContentLoaded', () => {
             expLocation2: "Istanbul",
 
             sectionExpertise: "Clinical Specializations",
-            expertise: [
-                "Anxiety Disorders",
-                "Obsessive Compulsive Disorder (OCD)",
-                "Depression",
-                "Eating Disorders",
-                "Addiction",
-                "Loneliness and Social Isolation",
-                "Geriatric Psychology"
-            ],
+            expertiseAnxietyTitle: "Anxiety Disorders",
+            expertiseAnxietyDesc: "Evidence-based therapy approaches for panic attacks, social anxiety, generalized anxiety disorder, and phobias.",
+            expertiseOCDTitle: "Obsessive Compulsive Disorder (OCD)",
+            expertiseOCDDesc: "Specialized CBT protocols for managing intrusive thoughts and repetitive behaviors.",
+            expertiseDepressionTitle: "Depression",
+            expertiseDepressionDesc: "Integrated therapy support for major depression, dysthymia, and seasonal affective disorders.",
+            expertiseEatingTitle: "Eating Disorders",
+            expertiseEatingDesc: "Multidisciplinary treatment approach for anorexia, bulimia, and binge eating disorder.",
+            expertiseAddictionTitle: "Addiction",
+            expertiseAddictionDesc: "Motivational interviewing and relapse prevention strategies for substance and behavioral addictions.",
+            expertiseLonelinessTitle: "Loneliness and Social Isolation",
+            expertiseLonelinessDesc: "Relational and cognitive interventions for those experiencing chronic loneliness and social connection difficulties.",
+            expertiseGeriatricTitle: "Geriatric Psychology",
+            expertiseGeriatricDesc: "Specialized support for psychological needs, cognitive changes, and quality of life in older adults.",
 
             sectionServices: "Services Offered",
             services: [
@@ -195,9 +205,21 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.timeline-item .year')[2].textContent = t.yearPresent;
         document.querySelectorAll('.timeline-item p')[2].textContent = t.phdOngoing;
 
-        // Expertise list
-        const expertiseList = document.querySelector('.expertise ul');
-        expertiseList.innerHTML = t.expertise.map(item => `<li>${item}</li>`).join('');
+        // Expertise accordion
+        document.querySelector('[data-i18n="expertiseAnxietyTitle"]').textContent = t.expertiseAnxietyTitle;
+        document.querySelector('[data-i18n="expertiseAnxietyDesc"]').textContent = t.expertiseAnxietyDesc;
+        document.querySelector('[data-i18n="expertiseOCDTitle"]').textContent = t.expertiseOCDTitle;
+        document.querySelector('[data-i18n="expertiseOCDDesc"]').textContent = t.expertiseOCDDesc;
+        document.querySelector('[data-i18n="expertiseDepressionTitle"]').textContent = t.expertiseDepressionTitle;
+        document.querySelector('[data-i18n="expertiseDepressionDesc"]').textContent = t.expertiseDepressionDesc;
+        document.querySelector('[data-i18n="expertiseEatingTitle"]').textContent = t.expertiseEatingTitle;
+        document.querySelector('[data-i18n="expertiseEatingDesc"]').textContent = t.expertiseEatingDesc;
+        document.querySelector('[data-i18n="expertiseAddictionTitle"]').textContent = t.expertiseAddictionTitle;
+        document.querySelector('[data-i18n="expertiseAddictionDesc"]').textContent = t.expertiseAddictionDesc;
+        document.querySelector('[data-i18n="expertiseLonelinessTitle"]').textContent = t.expertiseLonelinessTitle;
+        document.querySelector('[data-i18n="expertiseLonelinessDesc"]').textContent = t.expertiseLonelinessDesc;
+        document.querySelector('[data-i18n="expertiseGeriatricTitle"]').textContent = t.expertiseGeriatricTitle;
+        document.querySelector('[data-i18n="expertiseGeriatricDesc"]').textContent = t.expertiseGeriatricDesc;
 
         // Services list
         const servicesList = document.querySelector('.services ul');
@@ -313,6 +335,22 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Expertise accordion
+    const expertiseItems = document.querySelectorAll('.expertise-item');
+    expertiseItems.forEach(item => {
+        const header = item.querySelector('.expertise-header');
+        header.addEventListener('click', () => {
+            // Close all other items
+            expertiseItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            // Toggle current item
+            item.classList.toggle('active');
+        });
+    });
 
     console.log('Better Mental Life - Layer 2 loaded ✨');
 });
