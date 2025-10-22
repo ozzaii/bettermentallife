@@ -222,20 +222,22 @@ section {
 
 .hero-cta {
     display: inline-block;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 600;
     color: #FAF7F2;
     background: #8B2635;
-    padding: 16px 40px;
+    padding: 14px 32px;
     text-decoration: none;
     transition: all 0.3s ease;
     border: 2px solid #8B2635;
+    letter-spacing: 0.03em;
 }
 
 .hero-cta:hover {
     background: #1A1814;
     border-color: #1A1814;
     transform: translateX(4px);
+    letter-spacing: 0.05em;
 }
 
 .hero-line {
@@ -663,19 +665,21 @@ section {
 .contact-link {
     display: inline-block;
     margin-top: 48px;
-    font-size: 28px;
+    font-size: 22px;
     font-weight: 600;
     color: #8B2635;
     text-decoration: none;
     border-bottom: 3px solid #8B2635;
-    padding-bottom: 8px;
+    padding-bottom: 6px;
     transition: all 0.3s ease;
+    letter-spacing: 0.02em;
 }
 
 .contact-link:hover {
     color: #FAF7F2;
     border-color: #FAF7F2;
-    transform: translateY(-2px);
+    transform: translateX(4px);
+    letter-spacing: 0.04em;
 }
 
 /* Footer */
