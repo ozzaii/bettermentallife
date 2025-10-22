@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Intersection Observer for fade-in animations
     const observerOptions = {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.05,
+        rootMargin: '0px 0px 100px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Observe timeline and experience items individually
     document.querySelectorAll('.timeline-item, .experience-item, .cert-item, .location-item').forEach((item, index) => {
         item.classList.add('fade-in-item');
-        item.style.transitionDelay = `${index * 0.08}s`;
+        item.style.transitionDelay = `${index * 0.05}s`;
         observer.observe(item);
     });
 
