@@ -830,18 +830,19 @@ section {
 
 .location-link {
     display: inline-block;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 500;
     color: #8B2635;
     text-decoration: none;
-    border-bottom: 2px solid rgba(139, 38, 53, 0.3);
-    padding-bottom: 4px;
+    background: rgba(139, 38, 53, 0.05);
+    padding: 8px 16px;
+    border-radius: 2px;
     transition: all 0.3s ease;
 }
 
 .location-link:hover {
-    border-color: #8B2635;
-    transform: translateX(4px);
+    background: rgba(139, 38, 53, 0.1);
+    transform: translateX(3px);
 }
 
 .main-location-title {
@@ -869,66 +870,64 @@ section {
 }
 
 .collapsible-location {
-    padding-bottom: 24px;
-    margin-bottom: 8px;
-}
-
-.location-header {
-    display: grid;
-    grid-template-columns: 20px 1fr auto;
-    align-items: baseline;
-    gap: 12px;
-    padding: 16px 0;
+    border-left: 4px solid #8B2635;
+    padding-left: 24px;
+    padding-top: 12px;
+    padding-bottom: 32px;
+    margin-bottom: 0;
     cursor: pointer;
-    transition: none;
+    transition: all 0.3s ease;
     -webkit-tap-highlight-color: transparent;
     outline: none;
     user-select: none;
 }
 
-.location-header:hover .location-name {
+.collapsible-location:hover {
+    border-left-width: 5px;
+    padding-left: 26px;
+}
+
+.collapsible-location:hover .location-name {
     color: #8B2635;
 }
 
-.location-dash {
-    color: #8B2635;
-    font-size: 18px;
-    font-weight: 300;
-    line-height: 1;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+.collapsible-location:last-child {
+    padding-bottom: 0;
 }
 
-.location-dash::before {
-    content: "—";
-    display: block;
-}
-
-.collapsible-location.active .location-dash::before {
-    content: "+";
+.location-header {
+    padding-bottom: 4px;
 }
 
 .location-name {
+    display: block;
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 24px;
+    font-weight: 600;
     color: #2A2622;
-    line-height: 1.3;
+    line-height: 1.2;
+    margin-bottom: 8px;
     transition: color 0.3s ease;
 }
 
 .location-detail {
-    font-size: 15px;
+    display: block;
+    font-size: 16px;
     color: #6B6862;
     font-style: italic;
-    line-height: 1.3;
-    text-align: right;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+.collapsible-location:hover .location-detail {
+    color: #8B2635;
 }
 
 .location-content {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    padding: 0 0 0 32px;
+    padding: 0;
     transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
                 opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
                 padding 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -937,7 +936,7 @@ section {
 .collapsible-location.active .location-content {
     max-height: 200px;
     opacity: 1;
-    padding: 8px 0 16px 32px;
+    padding: 12px 0 0 0;
 }
 
 .full-address {
@@ -949,18 +948,19 @@ section {
 
 .location-map-link {
     display: inline-block;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
     color: #8B2635;
     text-decoration: none;
-    border-bottom: 1px solid rgba(139, 38, 53, 0.3);
-    padding-bottom: 2px;
+    background: rgba(139, 38, 53, 0.04);
+    padding: 6px 12px;
+    border-radius: 2px;
     transition: all 0.3s ease;
 }
 
 .location-map-link:hover {
-    border-color: #8B2635;
-    transform: translateX(3px);
+    background: rgba(139, 38, 53, 0.08);
+    transform: translateX(2px);
 }
 
 .locations-note {
@@ -1000,21 +1000,21 @@ section {
 .contact-link {
     display: inline-block;
     margin-top: 32px;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 500;
     color: #8B2635;
     text-decoration: none;
-    border-bottom: 2px solid #8B2635;
-    padding-bottom: 4px;
+    background: rgba(139, 38, 53, 0.06);
+    padding: 10px 20px;
+    border-radius: 2px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    letter-spacing: 0.01em;
+    letter-spacing: 0.005em;
 }
 
 .contact-link:hover {
-    color: #1A1814;
-    border-color: #1A1814;
+    background: rgba(139, 38, 53, 0.12);
+    color: #8B2635;
     transform: translateX(4px);
-    letter-spacing: 0.02em;
 }
 
 /* Footer - Minimal & Refined */
