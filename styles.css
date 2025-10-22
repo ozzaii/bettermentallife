@@ -467,50 +467,76 @@ section {
 .cert-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 64px;
     margin-bottom: 48px;
 }
 
 .cert-item {
-    border: 2px solid #8B2635;
-    padding: 32px;
-    background: #FAF7F2;
-    transition: all 0.4s ease;
+    border-left: 5px solid #8B2635;
+    padding-left: 32px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background: transparent;
+    transition: all 0.3s ease;
     cursor: default;
+    position: relative;
+}
+
+.cert-item::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: linear-gradient(to bottom,
+        rgba(139, 38, 53, 0.3) 0%,
+        #8B2635 50%,
+        rgba(139, 38, 53, 0.3) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.cert-item:hover::before {
+    opacity: 1;
 }
 
 .cert-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(139, 38, 53, 0.15);
-    border-width: 3px;
+    border-left-width: 6px;
+    padding-left: 36px;
 }
 
 .cert-item h3 {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 28px;
-    font-weight: 600;
+    font-size: clamp(36px, 5vw, 48px);
+    font-weight: 700;
     color: #8B2635;
-    margin-bottom: 12px;
-    transition: transform 0.3s ease;
+    margin-bottom: 16px;
+    line-height: 1.1;
+    transition: letter-spacing 0.3s ease;
 }
 
 .cert-item:hover h3 {
-    transform: scale(1.05);
+    letter-spacing: 0.02em;
 }
 
 .cert-item p {
-    font-size: 17px;
-    line-height: 1.6;
-    margin-bottom: 16px;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: #4A4743;
 }
 
 .cert-org {
-    display: block;
-    font-size: 14px;
+    display: inline-block;
+    font-size: 13px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #6B6862;
+    letter-spacing: 0.1em;
+    color: #FAF7F2;
+    background: #8B2635;
+    padding: 6px 16px;
+    border-radius: 2px;
 }
 
 .languages {
@@ -754,6 +780,7 @@ section {
 
     .cert-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 80px;
     }
 
     .locations-grid {
