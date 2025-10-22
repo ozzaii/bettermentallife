@@ -768,16 +768,48 @@ section {
     width: 100%;
     height: 0;
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    overflow: hidden;
-    border: 3px solid #8B2635;
+    overflow: visible;
     margin-bottom: 24px;
-    box-shadow: 0 8px 24px rgba(139, 38, 53, 0.12);
     transition: all 0.4s ease;
 }
 
-.map-container:hover {
-    box-shadow: 0 12px 32px rgba(139, 38, 53, 0.18);
-    border-width: 4px;
+/* Decorative corner brackets - top left & top right */
+.map-container::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    height: 48px;
+    border-top: 2px solid #8B2635;
+    border-left: 2px solid #8B2635;
+    border-right: 2px solid #8B2635;
+    opacity: 0.6;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Decorative corner brackets - bottom left & bottom right */
+.map-container::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: -8px;
+    right: -8px;
+    height: 48px;
+    border-bottom: 2px solid #8B2635;
+    border-left: 2px solid #8B2635;
+    border-right: 2px solid #8B2635;
+    opacity: 0.6;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.map-container:hover::before,
+.map-container:hover::after {
+    opacity: 0.9;
 }
 
 .map-container iframe {
@@ -786,6 +818,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
+    border: 1px solid rgba(139, 38, 53, 0.15);
 }
 
 .location-address {
