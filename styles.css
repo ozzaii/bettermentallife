@@ -515,6 +515,17 @@ section {
     padding: 20px 24px;
     cursor: pointer;
     transition: none;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    user-select: none;
+}
+
+.expertise-header:focus {
+    outline: none;
+}
+
+.expertise-header:active {
+    background: transparent;
 }
 
 .expertise-header:hover .expertise-dash {
