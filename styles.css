@@ -51,6 +51,18 @@ html {
     transform: translateY(-100%);
 }
 
+/* Scroll Progress Bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: #8B2635;
+    z-index: 1001;
+    transition: width 0.1s ease-out;
+}
+
 .navbar-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -511,7 +523,22 @@ section {
     font-size: 18px;
     font-weight: 300;
     line-height: 1;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.2s ease;
+}
+
+.expertise-dash::before {
+    content: "—";
+    display: block;
+    transition: opacity 0.2s ease;
+}
+
+.expertise-item.active .expertise-dash::before {
+    content: "+";
+}
+
+.expertise-item.active .expertise-dash {
+    transform: rotate(0deg);
 }
 
 .expertise-title {
@@ -853,7 +880,7 @@ section {
 .footer {
     background: #E8E6E1;
     color: #1A1814;
-    padding: 80px 24px;
+    padding: 80px 24px 60px 24px;
     text-align: center;
 }
 
@@ -925,7 +952,7 @@ section {
     }
 
     .footer {
-        padding: 100px 48px;
+        padding: 100px 48px 70px 48px;
     }
 
     .footer-brand h2 {
@@ -994,7 +1021,7 @@ section {
     }
 
     .footer {
-        padding: 100px 64px 80px 64px;
+        padding: 100px 64px 70px 64px;
     }
 
     .hero {

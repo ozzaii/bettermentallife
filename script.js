@@ -2,12 +2,27 @@
 // Intersection Observer animations, smooth interactions
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Scroll progress bar
+    const progressBar = document.querySelector('.scroll-progress');
+
+    function updateProgressBar() {
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
+
+        progressBar.style.width = scrollPercent + '%';
+    }
+
     // Navbar scroll behavior with hide/show
     const navbar = document.querySelector('.navbar');
     let lastScroll = 0;
 
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
+
+        // Update progress bar
+        updateProgressBar();
 
         // Hide on scroll down, show on scroll up
         if (currentScroll > lastScroll && currentScroll > 100) {
@@ -25,6 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         lastScroll = currentScroll;
     });
+
+    // Initial progress bar update
+    updateProgressBar();
 
     // Language content object
     const translations = {
