@@ -15,11 +15,90 @@ body {
     line-height: 1.6;
     font-size: 18px;
     overflow-x: hidden;
+    padding-top: 70px; /* Navbar height */
 }
 
 /* Smooth scroll behavior */
 html {
     scroll-behavior: smooth;
+}
+
+/* Navbar - Elegant & Minimal */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(250, 247, 242, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(139, 38, 53, 0.1);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(250, 247, 242, 0.98);
+    box-shadow: 0 2px 12px rgba(139, 38, 53, 0.08);
+}
+
+.navbar-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 45px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover .logo-img {
+    transform: scale(1.05);
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.lang-btn {
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #6B6862;
+    cursor: pointer;
+    padding: 6px 12px;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.lang-btn:hover {
+    color: #8B2635;
+    background: rgba(139, 38, 53, 0.05);
+}
+
+.lang-btn.active {
+    color: #8B2635;
+    background: rgba(139, 38, 53, 0.1);
+}
+
+.lang-divider {
+    color: rgba(139, 38, 53, 0.3);
+    font-size: 14px;
+    font-weight: 300;
 }
 
 /* Fade-in animations - subtle */

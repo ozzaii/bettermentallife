@@ -2,6 +2,53 @@
 // Intersection Observer animations, smooth interactions
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Navbar scroll behavior
+    const navbar = document.querySelector('.navbar');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+
+        // Add shadow when scrolled
+        if (currentScroll > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+
+        lastScroll = currentScroll;
+    });
+
+    // Language switcher
+    const langButtons = document.querySelectorAll('.lang-btn');
+    const currentLang = localStorage.getItem('language') || 'tr';
+
+    // Set initial active state
+    langButtons.forEach(btn => {
+        if (btn.dataset.lang === currentLang) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+
+    // Language switch handler
+    langButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const selectedLang = btn.dataset.lang;
+
+            // Update active states
+            langButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Store preference
+            localStorage.setItem('language', selectedLang);
+
+            // Future: Content swapping will go here
+            console.log(`Language switched to: ${selectedLang}`);
+        });
+    });
+
     // Hero entrance animation
     setTimeout(() => {
         document.querySelector('.hero').classList.add('hero-loaded');
