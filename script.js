@@ -2,12 +2,19 @@
 // Intersection Observer animations, smooth interactions
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Navbar scroll behavior
+    // Navbar scroll behavior with hide/show
     const navbar = document.querySelector('.navbar');
     let lastScroll = 0;
 
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
+
+        // Hide on scroll down, show on scroll up
+        if (currentScroll > lastScroll && currentScroll > 100) {
+            navbar.classList.add('hidden');
+        } else {
+            navbar.classList.remove('hidden');
+        }
 
         // Add shadow when scrolled
         if (currentScroll > 50) {
@@ -24,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tr: {
             // Hero
             heroLabel: "Uzm. Klinik Psikolog",
-            heroStatement: "Londra ve İstanbul'da psikoloji merkezleri kurdu. Lisans döneminde yayımlanmış araştırması var. İngiltere NHS'de klinik eğitim aldı.",
+            heroStatement: "Akademik araştırma ve klinik uzmanlık. İngiltere NHS eğitimi. İstanbul merkezli psikoterapi hizmeti.",
             heroCTA: "Randevu Al →",
             heroCTALink: "https://wa.me/905339735991?text=Merhaba%2C%20psikolojik%20destek%20hizmeti%20hakk%C4%B1nda%20bilgi%20almak%20ve%20randevu%20olu%C5%9Fturmak%20istiyorum.",
 
@@ -82,26 +89,13 @@ document.addEventListener('DOMContentLoaded', () => {
             contactCTA: "WhatsApp ile İletişim →",
 
             // Footer
-            footerCol1Title: "Eğitim & Deneyim",
-            footerCol1Items: [
-                "University of London, Goldsmiths",
-                "NHS Klinik Eğitimi",
-                "Yayımlanmış Araştırmacı",
-                "Doktora Adayı (Devam Ediyor)"
-            ],
-            footerCol2Title: "Lokasyonlar",
-            footerCol2Items: [
-                "Nişantaşı, Şişli",
-                "Bahçeşehir",
-                "Moda, Kadıköy"
-            ],
-            footerCol3Title: "İletişim",
-            footerTagline: "Uzm. Klinik Psikolog Şilan Eser — Kaliteli bakımın nitelikli eğitimle başladığı inancıyla."
+            footerSubtitle: "Uzm. Klinik Psikolog Şilan Eser",
+            footerMeta: "İstanbul — Nişantaşı, Bahçeşehir, Moda"
         },
         en: {
             // Hero
             heroLabel: "Clinical Psychologist",
-            heroStatement: "Founded psychology centers in London and Istanbul. Published researcher during undergraduate studies. Trained clinically at UK NHS.",
+            heroStatement: "Academic research and clinical expertise. UK NHS training. Istanbul-based psychotherapy services.",
             heroCTA: "Book Appointment →",
             heroCTALink: "https://wa.me/905339735991?text=Hello%2C%20I%20would%20like%20to%20get%20information%20about%20psychological%20support%20services%20and%20make%20an%20appointment.",
 
@@ -159,21 +153,8 @@ document.addEventListener('DOMContentLoaded', () => {
             contactCTA: "Contact via WhatsApp →",
 
             // Footer
-            footerCol1Title: "Education & Experience",
-            footerCol1Items: [
-                "University of London, Goldsmiths",
-                "NHS Clinical Training",
-                "Published Researcher",
-                "PhD Candidate (Ongoing)"
-            ],
-            footerCol2Title: "Locations",
-            footerCol2Items: [
-                "Nişantaşı, Şişli",
-                "Bahçeşehir",
-                "Moda, Kadıköy"
-            ],
-            footerCol3Title: "Contact",
-            footerTagline: "Clinical Psychologist Şilan Eser — Where quality care begins with quality training."
+            footerSubtitle: "Clinical Psychologist Şilan Eser",
+            footerMeta: "Istanbul — Nişantaşı, Bahçeşehir, Moda"
         }
     };
 
@@ -243,15 +224,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.contact-link').textContent = t.contactCTA;
 
         // Footer
-        document.querySelectorAll('.footer-col h3')[0].textContent = t.footerCol1Title;
-        document.querySelectorAll('.footer-col h3')[1].textContent = t.footerCol2Title;
-        document.querySelectorAll('.footer-col h3')[2].textContent = t.footerCol3Title;
-
-        const footerLists = document.querySelectorAll('.footer-col ul');
-        footerLists[0].innerHTML = t.footerCol1Items.map(item => `<li>${item}</li>`).join('');
-        footerLists[1].innerHTML = t.footerCol2Items.map(item => `<li>${item}</li>`).join('');
-
-        document.querySelector('.footer-tagline').textContent = t.footerTagline;
+        document.querySelector('[data-i18n="footerSubtitle"]').textContent = t.footerSubtitle;
+        document.querySelector('[data-i18n="footerMeta"]').textContent = t.footerMeta;
     }
 
     // Set initial active state and content
