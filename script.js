@@ -45,6 +45,49 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(item);
     });
 
+    // Focus state on scroll (mobile/desktop) - sophisticated in-view highlighting
+    const focusObserverOptions = {
+        threshold: 0.6,
+        rootMargin: '-10% 0px -10% 0px'
+    };
+
+    const focusObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+            } else {
+                // Remove in-view when scrolled away (subtle)
+                entry.target.classList.remove('in-view');
+            }
+        });
+    }, focusObserverOptions);
+
+    // Apply focus observer to timeline, experience, and location items
+    document.querySelectorAll('.timeline-item, .experience-item, .location-item').forEach(item => {
+        focusObserver.observe(item);
+    });
+
+    // List items focus (expertise and services) - more subtle, higher threshold
+    const listFocusOptions = {
+        threshold: 0.8,
+        rootMargin: '-5% 0px -5% 0px'
+    };
+
+    const listFocusObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+            } else {
+                entry.target.classList.remove('in-view');
+            }
+        });
+    }, listFocusOptions);
+
+    // Apply to list items
+    document.querySelectorAll('.expertise li, .services li').forEach(item => {
+        listFocusObserver.observe(item);
+    });
+
     // Parallax effect on section numbers (subtle)
     const sectionNumbers = document.querySelectorAll('.section-number');
     if (window.innerWidth >= 768) { // Only on tablet+

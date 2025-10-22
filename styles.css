@@ -271,17 +271,47 @@ section {
 .timeline-item {
     border-left: 3px solid #8B2635;
     padding-left: 24px;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
     cursor: default;
+    position: relative;
 }
 
-.timeline-item:hover {
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -3px;
+    top: 0;
+    width: 3px;
+    height: 0;
+    background: linear-gradient(to bottom, #8B2635, rgba(139, 38, 53, 0.4));
+    transition: height 0.6s ease;
+}
+
+.timeline-item:hover::before,
+.timeline-item.in-view::before {
+    height: 100%;
+}
+
+.timeline-item:hover,
+.timeline-item.in-view {
     border-left-width: 5px;
     padding-left: 28px;
+    transform: translateX(4px);
 }
 
-.timeline-item:hover h3 {
+.timeline-item:hover h3,
+.timeline-item.in-view h3 {
     color: #8B2635;
+}
+
+.timeline-item .year {
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .year,
+.timeline-item.in-view .year {
+    transform: scale(1.1);
+    letter-spacing: 0.1em;
 }
 
 .year {
@@ -353,17 +383,43 @@ section {
 .experience-item {
     border-left: 3px solid #8B2635;
     padding-left: 24px;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
     cursor: default;
+    position: relative;
 }
 
-.experience-item:hover {
+.experience-item::before {
+    content: '';
+    position: absolute;
+    left: -3px;
+    top: 0;
+    width: 3px;
+    height: 0;
+    background: linear-gradient(to bottom, #8B2635, rgba(139, 38, 53, 0.4));
+    transition: height 0.6s ease;
+}
+
+.experience-item:hover::before,
+.experience-item.in-view::before {
+    height: 100%;
+}
+
+.experience-item:hover,
+.experience-item.in-view {
     border-left-width: 5px;
     padding-left: 28px;
+    transform: translateX(4px);
 }
 
-.experience-item:hover h3 {
+.experience-item:hover h3,
+.experience-item.in-view h3 {
     color: #8B2635;
+}
+
+.experience-item:hover .year,
+.experience-item.in-view .year {
+    transform: scale(1.1);
+    letter-spacing: 0.1em;
 }
 
 .experience-item .year {
@@ -405,7 +461,8 @@ section {
     cursor: default;
 }
 
-.expertise li:hover {
+.expertise li:hover,
+.expertise li.in-view {
     padding-left: 36px;
     color: #8B2635;
 }
@@ -417,10 +474,13 @@ section {
     color: #8B2635;
     font-size: 20px;
     transition: all 0.3s ease;
+    opacity: 0.6;
 }
 
-.expertise li:hover::before {
+.expertise li:hover::before,
+.expertise li.in-view::before {
     transform: scaleX(1.4);
+    opacity: 1;
 }
 
 /* Services */
@@ -452,7 +512,8 @@ section {
     cursor: default;
 }
 
-.services li:hover {
+.services li:hover,
+.services li.in-view {
     padding-left: 36px;
     color: #8B2635;
 }
@@ -465,10 +526,13 @@ section {
     font-size: 28px;
     line-height: 1;
     transition: all 0.3s ease;
+    opacity: 0.6;
 }
 
-.services li:hover::before {
+.services li:hover::before,
+.services li.in-view::before {
     transform: scale(1.3);
+    opacity: 1;
 }
 
 /* Certifications */
@@ -538,11 +602,73 @@ section {
     background: #F5F3EF;
 }
 
-.locations-list {
+.locations-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 64px;
     margin-top: 48px;
+}
+
+.location-map h3,
+.additional-locations h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #1A1814;
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    overflow: hidden;
+    border: 3px solid #8B2635;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 24px rgba(139, 38, 53, 0.12);
+    transition: all 0.4s ease;
+}
+
+.map-container:hover {
+    box-shadow: 0 12px 32px rgba(139, 38, 53, 0.18);
+    border-width: 4px;
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.location-address {
+    font-size: 18px;
+    color: #4A4743;
+    margin-bottom: 16px;
+    font-style: italic;
+}
+
+.location-link {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 600;
+    color: #8B2635;
+    text-decoration: none;
+    border-bottom: 2px solid rgba(139, 38, 53, 0.3);
+    padding-bottom: 4px;
+    transition: all 0.3s ease;
+}
+
+.location-link:hover {
+    border-color: #8B2635;
+    transform: translateX(4px);
+}
+
+.additional-locations {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 }
 
 .location-item {
@@ -552,7 +678,8 @@ section {
     cursor: default;
 }
 
-.location-item:hover {
+.location-item:hover,
+.location-item.in-view {
     border-left-width: 6px;
     padding-left: 28px;
 }
@@ -560,7 +687,7 @@ section {
 .location-name {
     display: block;
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 36px;
+    font-size: 28px;
     font-weight: 600;
     color: #8B2635;
     line-height: 1.2;
@@ -568,7 +695,8 @@ section {
     transition: letter-spacing 0.3s ease;
 }
 
-.location-item:hover .location-name {
+.location-item:hover .location-name,
+.location-item.in-view .location-name {
     letter-spacing: 0.02em;
 }
 
@@ -580,8 +708,18 @@ section {
     transition: color 0.3s ease;
 }
 
-.location-item:hover .location-detail {
+.location-item:hover .location-detail,
+.location-item.in-view .location-detail {
     color: #8B2635;
+}
+
+.locations-note {
+    font-size: 16px;
+    color: #6B6862;
+    font-style: italic;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(139, 38, 53, 0.2);
 }
 
 /* Contact */
@@ -701,8 +839,13 @@ section {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .locations-list {
-        grid-template-columns: repeat(3, 1fr);
+    .locations-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+    }
+
+    .map-container {
+        padding-bottom: 75%; /* Taller on tablet */
     }
 }
 
@@ -747,5 +890,14 @@ section {
 
     .experience-timeline {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .locations-grid {
+        grid-template-columns: 1.2fr 1fr;
+        gap: 80px;
+    }
+
+    .map-container {
+        padding-bottom: 60%; /* Back to wider on desktop */
     }
 }
