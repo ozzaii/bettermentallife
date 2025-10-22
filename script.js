@@ -342,14 +342,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Parallax effect on section numbers (subtle)
+    // Section number parallax - subtle movement relative to viewport
     const sectionNumbers = document.querySelectorAll('.section-number');
-    if (window.innerWidth >= 768) { // Only on tablet+
+    if (window.innerWidth >= 1024) { // Desktop only
         window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            sectionNumbers.forEach((num, index) => {
-                const speed = 0.3;
-                const yPos = -(scrolled * speed);
-                num.style.transform = `translateY(${yPos}px)`;
+            sectionNumbers.forEach((num) => {
+                const section = num.closest('section');
+                if (!section) return;
+
+                const rect = section.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+
+                // Only apply parallax when section is in viewport
+                if (rect.top < windowHeight && rect.bottom > 0) {
+                    // Calculate position relative to viewport center
+                    const centerOffset = (rect.top + rect.height / 2 - windowHeight / 2);
+                    const yPos = centerOffset * 0.08; // Very subtle movement
+                    num.style.transform = `translateY(${yPos}px)`;
+                }
             });
         });
     }

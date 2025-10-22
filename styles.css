@@ -192,19 +192,22 @@ p {
 /* Section Numbers - Editorial Magazine Style */
 .section-number {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(72px, 10vw, 120px);
-    font-weight: 400;
+    font-size: clamp(64px, 8vw, 96px);
+    font-weight: 300;
     line-height: 1;
-    color: rgba(139, 38, 53, 0.12);
-    display: block;
-    margin-bottom: -20px;
-    letter-spacing: -0.04em;
-    transition: all 0.3s ease;
-    will-change: transform;
+    color: rgba(139, 38, 53, 0.08);
+    position: absolute;
+    top: 48px;
+    right: 24px;
+    letter-spacing: -0.06em;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, opacity;
+    pointer-events: none;
 }
 
 section:hover .section-number {
-    color: rgba(139, 38, 53, 0.18);
+    color: rgba(139, 38, 53, 0.14);
+    transform: scale(1.03);
 }
 
 /* Sections */
@@ -708,11 +711,21 @@ section {
 }
 
 .languages {
-    font-size: 18px;
-    text-align: center;
-    padding-top: 24px;
-    border-top: 1px solid rgba(139, 38, 53, 0.2);
-    color: #4A4743;
+    font-size: 16px;
+    text-align: left;
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(139, 38, 53, 0.15);
+    color: #6B6862;
+    font-style: italic;
+    letter-spacing: 0.01em;
+}
+
+.languages strong {
+    font-weight: 600;
+    font-style: normal;
+    color: #8B2635;
+    margin-right: 8px;
 }
 
 /* Istanbul Locations */
