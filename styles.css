@@ -1030,6 +1030,20 @@ section {
     margin: 0 auto;
 }
 
+.footer-logo {
+    width: 80px;
+    height: auto;
+    display: block;
+    margin: 0 auto 24px auto;
+    opacity: 0.9;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.footer-logo:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
 .footer-brand h2 {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 32px;
