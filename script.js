@@ -99,12 +99,16 @@ document.addEventListener('DOMContentLoaded', () => {
             languages: "Diller: Türkçe • English",
 
             sectionLocations: "İstanbul Lokasyonları",
-            locationMain: "Ana Merkez — Nişantaşı",
-            locationAddress: "Abdi İpekçi Caddesi, Nişantaşı, Şişli / İstanbul",
-            locationMapLink: "Google Maps'te Aç →",
+            locationMain: "Ana Lokasyon — Moda",
+            locationAddress: "Moda Caddesi, Bulgurlu Apt No: 143/2, Kadıköy / İstanbul",
+            locationMapLink: "Haritada Görüntüle →",
             locationAdditional: "Ek Lokasyonlar",
-            locationDetail1: "Avrupa Yakası — Batı İstanbul",
-            locationDetail2: "Kadıköy, Anadolu Yakası",
+            locationNisantasi: "Nişantaşı",
+            locationNisantasiDetail: "Şişli, Avrupa Yakası",
+            locationNisantasiFull: "Abdi İpekçi Caddesi, Ada Apartmanı, No: 22/20<br>Nişantaşı, Şişli / İstanbul",
+            locationBahcesehir: "Bahçeşehir",
+            locationBahcesehirDetail: "Başakşehir, Avrupa Yakası",
+            locationBahcesehirFull: "Şelale Cad, Şelale Villa No: 72<br>Bahçeşehir / İstanbul",
             locationNote: "Randevu oluştururken size en uygun lokasyonu belirtebilirsiniz.",
 
             sectionContact: "Randevu",
@@ -113,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Footer
             footerSubtitle: "Uzm. Klinik Psikolog Şilan Eser",
-            footerMeta: "İstanbul — Nişantaşı, Bahçeşehir, Moda"
+            footerMeta: "İstanbul — Moda, Nişantaşı, Bahçeşehir"
         },
         en: {
             // Hero
@@ -168,12 +172,16 @@ document.addEventListener('DOMContentLoaded', () => {
             languages: "Languages: Turkish • English",
 
             sectionLocations: "Istanbul Locations",
-            locationMain: "Main Center — Nişantaşı",
-            locationAddress: "Abdi İpekçi Street, Nişantaşı, Şişli / Istanbul",
-            locationMapLink: "Open in Google Maps →",
+            locationMain: "Main Location — Moda",
+            locationAddress: "Moda Street, Bulgurlu Apt No: 143/2, Kadıköy / Istanbul",
+            locationMapLink: "View on Map →",
             locationAdditional: "Additional Locations",
-            locationDetail1: "European Side — West Istanbul",
-            locationDetail2: "Kadıköy, Asian Side",
+            locationNisantasi: "Nişantaşı",
+            locationNisantasiDetail: "Şişli, European Side",
+            locationNisantasiFull: "Abdi İpekçi Street, Ada Apartment, No: 22/20<br>Nişantaşı, Şişli / Istanbul",
+            locationBahcesehir: "Bahçeşehir",
+            locationBahcesehirDetail: "Başakşehir, European Side",
+            locationBahcesehirFull: "Şelale Street, Şelale Villa No: 72<br>Bahçeşehir / Istanbul",
             locationNote: "You can specify your preferred location when booking an appointment.",
 
             sectionContact: "Appointment",
@@ -182,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Footer
             footerSubtitle: "Clinical Psychologist Şilan Eser",
-            footerMeta: "Istanbul — Nişantaşı, Bahçeşehir, Moda"
+            footerMeta: "Istanbul — Moda, Nişantaşı, Bahçeşehir"
         }
     };
 
@@ -251,13 +259,17 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.languages').innerHTML = `<strong>${t.languages.split(':')[0]}:</strong> ${t.languages.split(':')[1]}`;
 
         // Locations
-        document.querySelector('.location-map h3').textContent = t.locationMain;
-        document.querySelector('.location-address').textContent = t.locationAddress;
-        document.querySelector('.location-link').textContent = t.locationMapLink;
-        document.querySelector('.additional-locations h3').textContent = t.locationAdditional;
-        document.querySelectorAll('.location-detail')[0].textContent = t.locationDetail1;
-        document.querySelectorAll('.location-detail')[1].textContent = t.locationDetail2;
-        document.querySelector('.locations-note').textContent = t.locationNote;
+        document.querySelector('[data-i18n="locationMain"]').textContent = t.locationMain;
+        document.querySelector('[data-i18n="locationAddress"]').textContent = t.locationAddress;
+        document.querySelectorAll('[data-i18n="locationMapLink"]').forEach(el => el.textContent = t.locationMapLink);
+        document.querySelector('[data-i18n="locationAdditional"]').textContent = t.locationAdditional;
+        document.querySelector('[data-i18n="locationNisantasi"]').textContent = t.locationNisantasi;
+        document.querySelector('[data-i18n="locationNisantasiDetail"]').textContent = t.locationNisantasiDetail;
+        document.querySelector('[data-i18n-html="locationNisantasiFull"]').innerHTML = t.locationNisantasiFull;
+        document.querySelector('[data-i18n="locationBahcesehir"]').textContent = t.locationBahcesehir;
+        document.querySelector('[data-i18n="locationBahcesehirDetail"]').textContent = t.locationBahcesehirDetail;
+        document.querySelector('[data-i18n-html="locationBahcesehirFull"]').innerHTML = t.locationBahcesehirFull;
+        document.querySelector('[data-i18n="locationNote"]').textContent = t.locationNote;
 
         // Contact
         document.querySelector('.contact p').textContent = t.contactText;
@@ -376,6 +388,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
             // Toggle current item
+            item.classList.toggle('active');
+        });
+    });
+
+    // Location collapsible accordion
+    const locationItems = document.querySelectorAll('.collapsible-location');
+    locationItems.forEach(item => {
+        const header = item.querySelector('.location-header');
+        header.addEventListener('click', () => {
+            // Close all other location items
+            locationItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            // Toggle current location item
             item.classList.toggle('active');
         });
     });

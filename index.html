@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=35">
+    <link rel="stylesheet" href="styles.css?v=37">
 </head>
 <body>
 
@@ -226,25 +226,42 @@
 
             <div class="locations-grid">
                 <div class="location-map">
-                    <h3>Ana Merkez — Nişantaşı</h3>
+                    <h3 class="main-location-title" data-i18n="locationMain">Ana Lokasyon — Moda</h3>
                     <div class="map-container">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.5446837828287!2d28.987841!3d41.048397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7175e22bf7d%3A0x5a6c8b0e8e8e8e8e!2sAbdi%20%C4%B0pek%C3%A7i%20Cd.%2C%20%C5%9Ei%C5%9Fli%2F%C4%B0stanbul!5e0!3m2!1sen!2str!4v1234567890" width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.5!2d29.0318!3d40.9877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDU5JzE1LjciTiAyOcKwMDEnNTQuNSJF!5e0!3m2!1str!2str!4v1234567890" width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
-                    <p class="location-address">Abdi İpekçi Caddesi, Nişantaşı, Şişli / İstanbul</p>
-                    <a href="https://maps.app.goo.gl/Ajf3tKB3dQwSXkak6" target="_blank" rel="noopener" class="location-link">Google Maps'te Aç →</a>
+                    <p class="location-address" data-i18n="locationAddress">Moda Caddesi, Bulgurlu Apt No: 143/2, Kadıköy / İstanbul</p>
+                    <a href="https://maps.google.com/?q=40.9877,29.0318" target="_blank" rel="noopener" class="location-link" data-i18n="locationMapLink">Haritada Görüntüle →</a>
                 </div>
 
                 <div class="additional-locations">
-                    <h3>Ek Lokasyonlar</h3>
-                    <div class="location-item">
-                        <span class="location-name">Bahçeşehir</span>
-                        <span class="location-detail">Avrupa Yakası — Batı İstanbul</span>
+                    <h3 class="additional-title" data-i18n="locationAdditional">Ek Lokasyonlar</h3>
+
+                    <div class="location-item collapsible-location">
+                        <div class="location-header">
+                            <span class="location-dash">—</span>
+                            <span class="location-name" data-i18n="locationNisantasi">Nişantaşı</span>
+                            <span class="location-detail" data-i18n="locationNisantasiDetail">Şişli, Avrupa Yakası</span>
+                        </div>
+                        <div class="location-content">
+                            <p class="full-address" data-i18n-html="locationNisantasiFull">Abdi İpekçi Caddesi, Ada Apartmanı, No: 22/20<br>Nişantaşı, Şişli / İstanbul</p>
+                            <a href="https://maps.google.com/?q=41.048397,28.987841" target="_blank" rel="noopener" class="location-map-link" data-i18n="locationMapLink">Haritada Görüntüle →</a>
+                        </div>
                     </div>
-                    <div class="location-item">
-                        <span class="location-name">Moda</span>
-                        <span class="location-detail">Kadıköy, Anadolu Yakası</span>
+
+                    <div class="location-item collapsible-location">
+                        <div class="location-header">
+                            <span class="location-dash">—</span>
+                            <span class="location-name" data-i18n="locationBahcesehir">Bahçeşehir</span>
+                            <span class="location-detail" data-i18n="locationBahcesehirDetail">Başakşehir, Avrupa Yakası</span>
+                        </div>
+                        <div class="location-content">
+                            <p class="full-address" data-i18n-html="locationBahcesehirFull">Şelale Cad, Şelale Villa No: 72<br>Bahçeşehir / İstanbul</p>
+                            <a href="https://maps.google.com/?q=41.027,28.800" target="_blank" rel="noopener" class="location-map-link" data-i18n="locationMapLink">Haritada Görüntüle →</a>
+                        </div>
                     </div>
-                    <p class="locations-note">Randevu oluştururken size en uygun lokasyonu belirtebilirsiniz.</p>
+
+                    <p class="locations-note" data-i18n="locationNote">Randevu oluştururken size en uygun lokasyonu belirtebilirsiniz.</p>
                 </div>
             </div>
         </section>
@@ -280,6 +297,6 @@
         </footer>
     </main>
 
-    <script src="script.js?v=21"></script>
+    <script src="script.js?v=22"></script>
 </body>
 </html>
